@@ -1,5 +1,6 @@
 import { createClient } from 'contentful'
 import RecipeCard from '../components/RecipeCard'
+import Skeleton from '../components/Skeleton'
 
 export const getStaticProps = async () => {
 
@@ -19,6 +20,8 @@ export const getStaticProps = async () => {
 }
 
 export default function Recipes({ recipes }) {
+
+  if (!recipes) return <Skeleton />
 
   // console.log(recipes)
 
