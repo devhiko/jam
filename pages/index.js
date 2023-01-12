@@ -21,8 +21,6 @@ export const getStaticProps = async () => {
 export default function Recipes({ recipes }) {
   if (!recipes) return <Skeleton />;
 
-  // console.log(recipes)
-
   return (
     <div className="recipe-list">
       {recipes.map((recipe) => {
