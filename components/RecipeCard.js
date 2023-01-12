@@ -1,22 +1,15 @@
-import Link from 'next/link'
-import Image from 'next/image'
+import Link from "next/link";
+import Image from "next/image";
 
 const RecipeCard = ({ recipe }) => {
-
-  const { title, slug, cookingTime, thumbnail } = recipe.fields
-  const { url } = thumbnail.fields.file
-  const { width, height } = thumbnail.fields.file.details.image
-
-  console.log(recipe)
+  const { title, slug, cookingTime, thumbnail } = recipe.fields;
+  const { url } = thumbnail.fields.file;
+  const { width, height } = thumbnail.fields.file.details.image;
 
   return (
     <div className="card">
       <div className="featured">
-        <Image
-          src={`https:${url}`}
-          width={width}
-          height={height}
-        />
+        <Image src={`https:${url}`} width={width} height={height} />
       </div>
 
       <div className="content">
@@ -25,7 +18,9 @@ const RecipeCard = ({ recipe }) => {
           <p>Takes approx {cookingTime} mins to make</p>
         </div>
         <div className="actions">
-          <Link href={'/recipes/' + slug}><a>Cook this</a></Link>
+          <Link href={"/recipes/" + slug}>
+            <a>Cook this</a>
+          </Link>
         </div>
       </div>
 
@@ -35,7 +30,7 @@ const RecipeCard = ({ recipe }) => {
         }
         .content {
           background: #fff;
-          box-shadow: 1px 3px 5px rgba(0,0,0,0.1);
+          box-shadow: 1px 3px 5px rgba(0, 0, 0, 0.1);
           margin: 0;
           position: relative;
           top: -40px;
@@ -65,7 +60,7 @@ const RecipeCard = ({ recipe }) => {
         }
       `}</style>
     </div>
-  )
-}
+  );
+};
 
 export default RecipeCard;
