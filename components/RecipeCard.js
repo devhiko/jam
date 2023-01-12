@@ -1,5 +1,5 @@
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
 const RecipeCard = ({ recipe }) => {
   const { title, slug, cookingTime, thumbnail } = recipe.fields;

@@ -1,4 +1,3 @@
-* update dependencies
 * add tests
 * fix errors
 * refactor
